@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سبحة إلكترونية - صدقة جارية</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 { color: #f1c40f; margin-bottom: 5px; }
+        p.dedication { font-size: 1.2em; margin-bottom: 25px; color: #e0e0e0; font-weight: bold; }
+        .counter-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            font-size: 2.8em;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #1e8449;
+            transition: all 0.1s;
+            margin: 20px 0;
+            outline: none;
+        }
+        .counter-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #1e8449;
+        }
+        .reset-btn {
+            background: transparent;
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        select {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            background: #fff;
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            width: 90%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>سبحة إلكترونية</h2>
+    <p class="dedication">استغفروا و ادعوا لها بالرحمة والمغفرة</p>
+    
+    <select id="zekrSelect" onchange="resetCount()">
+        <option>أستغفر الله العظيم وأتوب إليه</option>
+        <option>سبحان الله وبحمده ، سبحان الله العظيم</option>
+        <option>لا إله إلا الله وحده لا شريك له</option>
+        <option>اللهم صلِّ وسلم على نبينا محمد</option>
+        <option>لا حول ولا قوة إلا بالله العلي العظيم</option>
+        <option>سبحان الله ، والحمد لله ، ولا إله إلا الله ، والله أكبر</option>
+        <option>لا إله إلا أنت سبحانك إني كنت من الظالمين</option>
+    </select>
+
+    <br>
+    <button class="counter-btn" id="countBtn" onclick="increment()">0</button>
+    <br>
+    <button class="reset-btn" onclick="resetCount()">إعادة الضبط</button>
+</div>
+
+<script>
+    let count = 0;
+    function increment() {
+        count++;
+        document.getElementById('countBtn').innerText = count;
+    }
+    function resetCount() {
+        count = 0;
+        document.getElementById('countBtn').innerText = count;
+    }
+</script>
+
+</body>
+</html>
